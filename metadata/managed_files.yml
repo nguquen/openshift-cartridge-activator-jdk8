@@ -1,10 +1,11 @@
 # locked_files:
-# - bin/
-# - bin/*
-# - metadata/
-# - metadata/*
-# - env/
-# - env/*
-# - template/
+- bin/
+- bin/*
+- metadata/
+- metadata/*
+- env/
+- env/*
+- template/
+- template/*
 processed_templates:
 - '**/*.erb'
