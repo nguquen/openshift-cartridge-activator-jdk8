@@ -27,7 +27,7 @@ if [ ! -d "${OPENSHIFT_ACTIVATOR_DIR}/logs" ]; then
 fi
 
 # setup jdk 8
-# setup-jdk-8
+setup-jdk-8
 
 # set env variables
 export ACTIVATOR_HOME="$OPENSHIFT_ACTIVATOR_DIR/versions/${version}"
