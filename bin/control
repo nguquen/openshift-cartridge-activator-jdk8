@@ -1,18 +1,18 @@
 #!/bin/bash -e
 
 function start {
-  echo "starting"
-    # cd $OPENSHIFT_REPO_DIR
-    # # build on first time
-    # [ -d target ] || build
-    # rm -f target/universal/stage/RUNNING_PID
-    # BIN_NAME=$(ls target/universal/stage/bin/ | head -n 1)
-    # nohup target/universal/stage/bin/$BIN_NAME -Duser.home=${OPENSHIFT_DATA_DIR} -Dhttp.port=8080 -Dhttp.address=${OPENSHIFT_ACTIVATOR_IP} -mem 512 > $OPENSHIFT_ACTIVATOR_LOG_DIR/play.log 2>&1 &
+    echo "starting"
+    cd $OPENSHIFT_REPO_DIR
+    # build on first time
+    [ -d target ] || build
+    rm -f target/universal/stage/RUNNING_PID
+    BIN_NAME=$(ls target/universal/stage/bin/ | head -n 1)
+    nohup target/universal/stage/bin/$BIN_NAME -Duser.home=${OPENSHIFT_DATA_DIR} -Dhttp.port=8080 -Dhttp.address=${OPENSHIFT_ACTIVATOR_IP} -mem 512 > $OPENSHIFT_ACTIVATOR_LOG_DIR/play.log 2>&1 &
 }
 
 function stop {
   echo "stopping"
-    # killall java || true
+  killall java || true
 }
 
 function restart {
@@ -21,22 +21,22 @@ function restart {
 }
 
 function build {
-  echo "building"
-    # Workaround for failure in npm install when a package in package.json
-    # points to a git commit.
-    # This issue occurs because we are running in the context of a
-    # git post receive-hook
-    # unset GIT_DIR
-    # unset GIT_WORK_TREE
+    echo "building"
+    Workaround for failure in npm install when a package in package.json
+    points to a git commit.
+    This issue occurs because we are running in the context of a
+    git post receive-hook
+    unset GIT_DIR
+    unset GIT_WORK_TREE
 
-    # cd ${OPENSHIFT_REPO_DIR}
-    # activator clean stage -Duser.home=${OPENSHIFT_DATA_DIR} -mem 512
+    cd ${OPENSHIFT_REPO_DIR}
+    activator clean stage -Duser.home=${OPENSHIFT_DATA_DIR} -mem 512
 }
 
 function tidy {
-  echo "tidy"
-    # shopt -s dotglob
-    # rm -rf $OPENSHIFT_TMP_DIR/*
+    echo "tidy"
+    shopt -s dotglob
+    rm -rf $OPENSHIFT_TMP_DIR/*
 }
 
 function catchall {
