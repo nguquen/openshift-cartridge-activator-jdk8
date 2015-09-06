@@ -24,11 +24,12 @@ function setup-activator() {
     	mkdir -p ${OPENSHIFT_DATA_DIR}/activator
   	fi
 
-  	if [ ! -d "${OPENSHIFT_DATA_DIR}/activator/activator-dist-1.3.6" ]; then
+  	if [ ! -d "${OPENSHIFT_DATA_DIR}/activator/activator-1.3.6" ]; then
 	    pushd ${OPENSHIFT_DATA_DIR}/activator
-	    wget https://downloads.typesafe.com/typesafe-activator/1.3.6/typesafe-activator-1.3.6.zip
-	    unzip typesafe-activator-1.3.6.zip
-	    rm typesafe-activator-1.3.6.zip
+	    wget https://downloads.typesafe.com/typesafe-activator/1.3.6/typesafe-activator-1.3.6-minimal.zip
+	    unzip typesafe-activator-1.3.6-minimal.zip
+	    rm typesafe-activator-1.3.6-minimal.zip
+      mv activator-1.3.6-minimal activator-1.3.6
 	    popd
 	fi
 	echo "Activator 1.3.6 Downloaded"
@@ -40,7 +41,7 @@ setup-activator
 
 # set env variables
 export JAVA_HOME="$OPENSHIFT_DATA_DIR/jdk/jdk1.8.0_60"
-export ACTIVATOR_HOME="$OPENSHIFT_DATA_DIR/activator/activator-dist-1.3.6/"
+export ACTIVATOR_HOME="$OPENSHIFT_DATA_DIR/activator/activator-1.3.6/"
 echo $JAVA_HOME > $OPENSHIFT_PLAY2_DIR/env/JAVA_HOME
 echo $ACTIVATOR_HOME > $OPENSHIFT_PLAY2_DIR/env/ACTIVATOR_HOME
 echo "$JAVA_HOME/bin:$ACTIVATOR_HOME" > $OPENSHIFT_PLAY2_DIR/env/OPENSHIFT_PLAY2_PATH_ELEMENT
