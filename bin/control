@@ -3,7 +3,7 @@
 function start {
     echo "starting"
     cd $OPENSHIFT_REPO_DIR
-    build on first time
+    # build on first time
     [ -d target ] || build
     rm -f target/universal/stage/RUNNING_PID
     BIN_NAME=$(ls target/universal/stage/bin/ | head -n 1)
