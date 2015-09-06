@@ -1,7 +1,7 @@
 Name: activator
 Cartridge-Short-Name: ACTIVATOR
 Display-Name: Typesafe Activator
-Description: "The High Velocity Web Framework For Java and Scala"
+Description: "Typesafe Activator and sbt get you started with the Typesafe Reactive Platform"
 Version: '1.3.6'
 License: "Apache License Version 2.0"
 Vendor: "Typesafe, Inc"
