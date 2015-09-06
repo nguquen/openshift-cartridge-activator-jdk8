@@ -1,6 +1,7 @@
 #!/bin/bash -e
 
 function start {
+  echo "starting"
     # cd $OPENSHIFT_REPO_DIR
     # # build on first time
     # [ -d target ] || build
