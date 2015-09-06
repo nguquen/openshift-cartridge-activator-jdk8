@@ -2,12 +2,12 @@
 
 function start {
     echo "starting"
-    cd $OPENSHIFT_REPO_DIR
-    # build on first time
-    [ -d target ] || build
-    rm -f target/universal/stage/RUNNING_PID
-    BIN_NAME=$(ls target/universal/stage/bin/ | head -n 1)
-    nohup target/universal/stage/bin/$BIN_NAME -Duser.home=${OPENSHIFT_DATA_DIR} -Dhttp.port=8080 -Dhttp.address=${OPENSHIFT_ACTIVATOR_IP} -mem 384 > $OPENSHIFT_ACTIVATOR_LOG_DIR/play.log 2>&1 &
+    # cd $OPENSHIFT_REPO_DIR
+    # # build on first time
+    # [ -d target ] || build
+    # rm -f target/universal/stage/RUNNING_PID
+    # BIN_NAME=$(ls target/universal/stage/bin/ | head -n 1)
+    # nohup target/universal/stage/bin/$BIN_NAME -Duser.home=${OPENSHIFT_DATA_DIR} -Dhttp.port=8080 -Dhttp.address=${OPENSHIFT_ACTIVATOR_IP} -mem 384 > $OPENSHIFT_ACTIVATOR_LOG_DIR/play.log 2>&1 &
 }
 
 function stop {
