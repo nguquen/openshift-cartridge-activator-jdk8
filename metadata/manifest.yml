@@ -1,0 +1,33 @@
+Name: play2
+Cartridge-Short-Name: PLAY2
+Display-Name: Play2 Cartridge
+Description: "The High Velocity Web Framework For Java and Scala"
+Version: '2.4.2'
+License: "ASL 2.0"
+Vendor: none
+Cartridge-Version: '0.0.1'
+Cartridge-Vendor: nguquen
+Categories:
+  - service
+  - web_framework
+  - java
+  - scala
+Provides:
+  - play2
+  - activator
+Scaling:
+  Min: 1
+  Max: -1
+Subscribes:
+  set-db-connection-info:
+    Type: "NET_TCP:db:connection-info"
+    Required: false
+Endpoints:
+  - Private-IP-Name:   IP
+    Private-Port-Name: PORT
+    Private-Port:      8080
+    Public-Port-Name:  PROXY_PORT
+    Mappings:
+      - Frontend:      ""
+        Backend:       ""
+        Options:       { websocket: true }
