@@ -22,13 +22,6 @@ function restart {
 
 function build {
     echo "building"
-    Workaround for failure in npm install when a package in package.json
-    points to a git commit.
-    This issue occurs because we are running in the context of a
-    git post receive-hook
-    unset GIT_DIR
-    unset GIT_WORK_TREE
-
     cd ${OPENSHIFT_REPO_DIR}
     activator clean stage -Duser.home=${OPENSHIFT_DATA_DIR} -mem 512
 }
