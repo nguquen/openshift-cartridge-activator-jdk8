@@ -11,15 +11,17 @@ function start {
 }
 
 function stop {
+  echo "stopping"
     # killall java || true
 }
 
 function restart {
-    # stop
-    # start
+    stop
+    start
 }
 
 function build {
+  echo "building"
     # Workaround for failure in npm install when a package in package.json
     # points to a git commit.
     # This issue occurs because we are running in the context of a
@@ -32,6 +34,7 @@ function build {
 }
 
 function tidy {
+  echo "tidy"
     # shopt -s dotglob
     # rm -rf $OPENSHIFT_TMP_DIR/*
 }
