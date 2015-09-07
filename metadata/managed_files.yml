@@ -6,6 +6,5 @@
 - env/
 - env/*
 - template/
-- template/*
 processed_templates:
 - '**/*.erb'
