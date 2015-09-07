@@ -11,7 +11,7 @@ if [ ! -d "${OPENSHIFT_ACTIVATOR_DIR}/logs" ]; then
 fi
 
 # set env variables
-export ACTIVATOR_HOME="$OPENSHIFT_ACTIVATOR_DIR/versions/${version}"
+export ACTIVATOR_HOME="$OPENSHIFT_ACTIVATOR_DIR/usr/${version}"
 export JAVA_HOME="/etc/alternatives/java_sdk_1.8.0"
 export PATH="$JAVA_HOME/bin:$ACTIVATOR_HOME:$PATH"
 echo $JAVA_HOME > $OPENSHIFT_ACTIVATOR_DIR/env/JAVA_HOME
